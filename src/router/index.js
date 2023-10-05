@@ -26,10 +26,12 @@ import workouts from '../views/admin/workouts/Index.vue'
 import createWorkouts from '../views/admin/workouts/Create.vue'
 import EditWorkout from '../views/admin/workouts/Edit.vue'
 
-import Blogs from '../views/admin/Blogs/Index.vue'
-import CreateBlogs from '../views/admin/Blogs/Create.vue'
-import EditBlogs from '../views/admin/Blogs/Edit.vue'
-import ShowBlogs from '../views/admin/Blogs/Show.vue'
+import Blogs from '../views/admin/blogs/Index.vue'
+import CreateBlogs from '../views/admin/blogs/Create.vue'
+import EditBlogs from '../views/admin/blogs/Edit.vue'
+import ShowBlogs from '../views/admin/blogs/Show.vue'
+
+import NotFoundPage from '../components/NotFoundPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -160,6 +162,11 @@ const router = createRouter({
           component : ShowBlogs
         }
       ]
+    },
+    {
+      path : "/:catchAll(.*)",
+      name : 'NotFoundPage',
+      component : NotFoundPage
     }
   ]
 })
@@ -176,6 +183,9 @@ router.beforeEach((to , from , next ) => {
     next()
   }
 })
-
+window.scrollTo({
+  top : 0,
+  behavior : "smooth"
+})
 
 export default router

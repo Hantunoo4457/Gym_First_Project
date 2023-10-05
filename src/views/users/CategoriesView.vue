@@ -1,5 +1,5 @@
 <template>
-    <div class="sm:flex justify-around flex-wrap">
+    <div class="sm:flex sm:w-full justify-around flex-wrap">
         <div class="sm:w-[28%]  m-6" v-for="category in categories" :key="category.id">
             <img class="w-full sm:h-[30vh]" :src="category.image" alt="">
             <h1 class="my-3 text-xl font-bold">{{ category.name }}</h1>

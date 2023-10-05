@@ -28,6 +28,6 @@ import Blogs from '../../components/Blogs.vue'
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
